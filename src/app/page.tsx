@@ -1,12 +1,10 @@
-import { Button } from "@/components/ui/button";
+import AuhtScreen from "@/features/auth/components/AuthScreen";
 
 
 export default function Home() {
   return (
-   <div className="text-rose-600 font-bold">
-      Hello world
-
-      <Button>Click here</Button>
-   </div>
+  <>
+      <AuhtScreen />
+  </>    
   );
 }
