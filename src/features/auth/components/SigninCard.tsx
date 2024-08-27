@@ -5,8 +5,13 @@ import { Separator } from '@/components/ui/separator'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import { SigninFlow } from '../types'
 
-function SigninCard() {
+interface SigninCardProps {
+    setState: (state: SigninFlow) => void
+}
+
+function SigninCard({setState}: SigninCardProps) {
   return (
     <Card className='w-full h-full p-8'>
         <CardHeader className='px-0 pt-0'>
@@ -68,7 +73,7 @@ function SigninCard() {
                 </Button>
             </div>
 
-            <p className='text-xs text-muted-foreground'>Don&apos;t have an account<span className='text-sky-700 hover:underline cursor-pointer'>Sign Up</span></p>
+            <p className='text-xs text-muted-foreground'>Don&apos;t have an account<span onClick={() => setState('signUp')} className='text-sky-700 hover:underline cursor-pointer'>Sign Up</span></p>
         </CardContent>
     </Card>
   )
